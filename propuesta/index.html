@@ -1,0 +1,535 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drelife &times; Real Betis | Propuesta de colaboraci&oacute;n</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;1,200&display=swap" rel="stylesheet">
+<style>:root{
+  --accent:#BEFF00;
+  --ink:#0c0e0a; --ink-2:#13160f;
+  --paper:#ffffff;
+  --line-d:rgba(255,255,255,.14); --line-l:#e9e9e6;
+  --mut-d:rgba(255,255,255,.60); --mut-l:#6b6b6b;
+  --card-d:rgba(255,255,255,.028); --card-l:#fafafa;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:#fff;
+  font-family:Inter,"Helvetica Neue",Arial,system-ui,-apple-system,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;letter-spacing:0}
+a{color:inherit;text-decoration:none}
+svg{display:block}
+p,li{font-style:normal;font-weight:400}
+
+/* ── TOPBAR ── */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;
+  min-height:70px;padding:0 48px;transition:background .4s ease,border-color .4s ease,color .4s ease;
+  border-bottom:1px solid var(--line-d);background:rgba(12,14,10,.72);backdrop-filter:blur(20px) saturate(1.3)}
+.brand{display:flex;align-items:center;gap:13px}
+.brand__dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+.brand__name{font-size:15px;font-weight:800;letter-spacing:-.01em}
+.brand__sep{width:1px;height:15px;background:currentColor;opacity:.25}
+.brand__ctx,.topbar .meta{font-size:11px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;opacity:.62}
+.topbar .menu{display:flex;flex-direction:column;gap:4px;width:24px}
+.topbar .menu span{height:1.6px;background:currentColor;border-radius:2px}
+body[data-top="light"] .topbar{background:rgba(255,255,255,.82);color:var(--ink);border-bottom-color:var(--line-l)}
+
+.progress{position:fixed;top:0;left:0;z-index:65;width:100%;height:2px;background:transparent}
+.progress__bar{height:100%;width:0;background:var(--accent);transition:width .15s linear}
+
+.side-nav{position:fixed;right:30px;top:50%;transform:translateY(-50%);z-index:55}
+.side-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.side-nav a{display:flex;align-items:center;justify-content:flex-end;gap:9px;min-height:18px;font-size:10px;font-weight:700;text-transform:uppercase;color:currentColor;opacity:.4}
+.side-nav span:first-child{opacity:0;transform:translateX(6px);transition:.25s;white-space:nowrap}
+.side-nav i{display:block;width:16px;height:1px;background:currentColor;transition:.25s}
+.side-nav a:hover span:first-child,.side-nav a.on span:first-child{opacity:1;transform:none}
+.side-nav a.on{opacity:1}.side-nav a.on i{width:30px}
+body[data-top="light"] .side-nav{color:var(--ink)}
+body[data-top="dark"] .side-nav{color:#fff}
+
+.sec{position:relative;min-height:100vh;display:flex;align-items:center;padding:100px 48px}
+.sec--auto{min-height:auto;padding:130px 48px 100px}
+.sec--dark{background:var(--ink);color:#fff}
+.sec--light{background:var(--paper);color:var(--ink)}
+.wrap{width:100%;max-width:1300px;margin:0 auto;position:relative;z-index:2}
+
+.eyebrow{display:flex;align-items:center;gap:13px;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;margin-bottom:30px}
+.eyebrow .n{color:var(--accent)}
+.sec--dark .eyebrow .t{color:rgba(255,255,255,.66)} .sec--light .eyebrow .t{color:#9a9a9a}
+
+.h1{font-size:clamp(38px,5.6vw,76px);font-weight:800;line-height:1;letter-spacing:-.035em;margin:0}
+.h2{font-size:clamp(32px,4.2vw,56px);font-weight:200;font-style:italic;line-height:1.08;letter-spacing:-.025em;margin:0;font-family:'Inter',sans-serif}
+.lime{color:var(--accent)}
+.lead{font-size:clamp(17px,1.4vw,20px);line-height:1.6;margin:24px 0 0;font-weight:400;font-style:normal}
+.sec--dark .lead{color:var(--mut-d)} .sec--light .lead{color:var(--mut-l)}
+.maxw{max-width:460px}
+
+.ico{width:52px;height:52px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;border:1px solid var(--line-d)}
+.ico svg{width:23px;height:23px}
+.sec--light .ico{border-color:var(--line-l)}
+.ico--lime{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.ico--ghost{background:rgba(255,255,255,.06)}
+.sec--light .ico--soft{background:#f1f1ee}
+
+.card{border-radius:20px;border:1px solid var(--line-d);background:var(--card-d);padding:28px;display:flex;flex-direction:column}
+.sec--light .card{border-color:var(--line-l);background:var(--card-l)}
+.card--hi{border-color:var(--accent);background:rgba(190,255,0,.05)}
+.card .num{font-size:13px;font-weight:800;color:var(--mut-d)}
+.sec--light .card .num{color:#b7b7b7}
+.card h3{font-size:22px;font-weight:750;letter-spacing:-.01em;margin:18px 0 0}
+.card .rule{width:26px;height:2px;background:currentColor;opacity:.25;margin:10px 0 14px}
+.card--hi .rule{background:var(--accent);opacity:1}
+.card p{font-size:16px;line-height:1.55;margin:0;color:var(--mut-d);font-weight:400;font-style:normal}
+.sec--light .card p{color:var(--mut-l)}
+
+.callout{border-radius:20px;border:1px solid var(--line-d);padding:22px 28px;display:flex;align-items:center;gap:22px}
+.sec--light .callout{border-color:var(--line-l)}
+.callout p{margin:0;font-size:17px;line-height:1.5}
+.callout .ico{width:46px;height:46px;border-color:var(--accent);color:var(--accent)}
+
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--ink);border-radius:999px;
+  padding:14px 24px;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;font-family:inherit}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{font-size:13px;font-weight:600;border:1px solid var(--line-l);border-radius:999px;padding:6px 12px;color:var(--mut-l)}
+.sec--dark .chip{border-color:var(--line-d);color:var(--mut-d)}
+
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+
+.motors{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.motor{text-align:center;display:flex;flex-direction:column;align-items:center}
+.motor .ring{width:118px;height:118px;border-radius:50%;border:2px solid var(--line-l);display:flex;align-items:center;justify-content:center;position:relative}
+.motor .ring svg{width:34px;height:34px}
+.motor.lime .ring{border-color:var(--accent)}
+.motor h3{font-size:21px;font-weight:750;margin:20px 0 8px}
+.motor p{font-size:16px;line-height:1.5;color:var(--mut-l);max-width:230px;margin:0}
+
+.feat{border-radius:18px;border:1px solid var(--line-l);padding:26px;display:flex;flex-direction:column;gap:14px;min-height:190px}
+.sec--dark .feat{border-color:var(--line-d)}
+.feat .fico{width:40px;height:40px;border-radius:50%;background:#f1f1ee;display:flex;align-items:center;justify-content:center}
+.sec--dark .feat .fico{background:rgba(255,255,255,.06)}
+.feat .fico svg{width:18px;height:18px}
+.feat h3{font-size:17px;font-weight:750;margin:0;letter-spacing:-.01em}
+.feat p{font-size:15px;line-height:1.5;color:var(--mut-l);margin:0}
+.sec--dark .feat p{color:var(--mut-d)}
+
+.manifesto{font-size:clamp(32px,5vw,68px);font-weight:800;line-height:1.06;letter-spacing:-.035em;max-width:1100px;margin:26px 0 0}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal.on{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+.blob{position:absolute;border-radius:50%;filter:blur(46px);pointer-events:none;z-index:1}
+
+/* ── pricing cards ── */
+.pric{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pcard{border-radius:22px;border:1px solid var(--line-d);padding:34px;display:flex;flex-direction:column}
+.pcard--hi{border-color:var(--accent);background:rgba(190,255,0,.05)}
+.pcard .ptag{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:16px}
+.pcard--hi .ptag{color:var(--accent)}
+.pcard h3{font-size:24px;font-weight:750;letter-spacing:-.015em;margin:0 0 22px}
+.pfig{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.pfig .pn{font-size:clamp(34px,3.6vw,50px);font-weight:800;letter-spacing:-.02em;line-height:1}
+.pfig .pu{font-size:14px;color:rgba(255,255,255,.5);font-weight:600}
+.pplus{display:flex;align-items:center;gap:12px;margin:18px 0}
+.pplus i{width:22px;height:1px;background:rgba(255,255,255,.25)}
+.pnote{font-size:15px;line-height:1.55;color:rgba(255,255,255,.55);margin-top:20px}
+.pcard--hi .pnote{color:rgba(255,255,255,.65)}
+
+/* ── rentabilidad simulator ── */
+.eco-tab,.eco-mtab{display:inline-flex;align-items:center;justify-content:center;
+  height:36px;border-radius:999px;border:1px solid var(--line-l);background:transparent;
+  font-family:inherit;font-size:12px;font-weight:700;color:var(--mut-l);cursor:pointer;
+  transition:background 180ms,color 180ms,border-color 180ms}
+.eco-tab{width:36px}
+.eco-mtab{padding:0 18px;font-weight:800;letter-spacing:.02em}
+.eco-tab:hover,.eco-mtab:hover{border-color:#aaa;color:#111}
+.eco-tab.eco-active,.eco-mtab.eco-active{background:#111;color:#fff;border-color:#111}
+.eco-val{transition:opacity 180ms ease}
+.eco-val.eco-fade{opacity:0}
+.eco-box{border:1px solid var(--line-l);border-radius:20px;overflow:hidden}
+.eco-assump{display:flex;flex-wrap:wrap;gap:6px 20px;align-items:center;padding:12px 20px;background:var(--card-l);border-radius:14px;font-size:12px;color:var(--mut-l);letter-spacing:.02em}
+
+/* ── responsive helpers (mobile only, no desktop impact) ── */
+.split-head{display:grid;grid-template-columns:0.9fr 1.1fr;gap:50px;align-items:end}
+.eco-main{display:grid;grid-template-columns:1fr 1fr}
+.closing-sec{min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:100px 48px 80px}
+.next-line{white-space:nowrap}
+
+@media(max-width:900px){
+  .g4{grid-template-columns:repeat(2,1fr)} .motors{grid-template-columns:1fr}
+  .pric,.eco-main{grid-template-columns:1fr}
+  .split-head{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:680px){
+  .sec{padding:110px 22px}.sec--auto{padding:120px 22px 80px}
+  .g2,.g3,.g4,.motors{grid-template-columns:1fr}
+  .side-nav{display:none}
+  .closing-sec{padding:110px 22px 60px}
+  .next-line{white-space:normal}
+  .topbar .meta{display:none}
+}
+</style></head>
+<body data-top="dark">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="ic-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="6.5" width="11" height="11" rx="2"/><path d="M9.5 9.5h5v5h-5z"/><path d="M9 3v2M12 3v2M15 3v2M9 19v2M12 19v2M15 19v2M3 9h2M3 12h2M3 15h2M19 9h2M19 12h2M19 15h2"/></symbol><symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol><symbol id="ic-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2M6 6l1.6 1.6M16.4 16.4 18 18M18 6l-1.6 1.6M7.6 16.4 6 18"/></symbol><symbol id="ic-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 4 8 4-8 4-8-4 8-4Z"/><path d="m4 12 8 4 8-4M4 16l8 4 8-4"/></symbol><symbol id="ic-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5 14.5 9.5"/><path d="M10.5 7.5 12 6a3.5 3.5 0 0 1 5 5l-1.5 1.5M13.5 16.5 12 18a3.5 3.5 0 0 1-5-5l1.5-1.5"/></symbol><symbol id="ic-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="9" cy="7" rx="5" ry="2.5"/><path d="M4 7v4c0 1.4 2.2 2.5 5 2.5"/><ellipse cx="15" cy="13" rx="5" ry="2.5"/><path d="M10 13v4c0 1.4 2.2 2.5 5 2.5s5-1.1 5-2.5v-4"/></symbol><symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 19 6v5c0 4.5-3 8-7 9.5C8 19 5 15.5 5 11V6l7-2.5Z"/><path d="m9.5 12 1.8 1.8 3.2-3.6"/></symbol><symbol id="ic-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol><symbol id="ic-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H5a1 1 0 0 0-1 1v6l9 9 7-7-9-9Z"/><circle cx="7.7" cy="7.7" r="1.1"/></symbol><symbol id="ic-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5.5A8 8 0 1 0 21 12"/><path d="M21 4v4h-4"/></symbol><symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M7 20v-6M12 20V8M17 20v-9"/></symbol><symbol id="ic-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.3"/><path d="M5.5 19.5c.7-3.2 3.3-5 6.5-5s5.8 1.8 6.5 5"/></symbol><symbol id="ic-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 1.5 5 4.5 5 8 0 2-1 4-2.5 5.5h-5C8 15 7 13 7 11c0-3.5 2-6.5 5-8Z"/><circle cx="12" cy="10" r="1.6"/><path d="M9.5 16.5 8 20l3-1.5M14.5 16.5 16 20l-3-1.5"/></symbol><symbol id="ic-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol></svg>
+<header class="topbar"><div class="brand"><span class="brand__dot"></span><span class="brand__name">Drelife</span><span class="brand__sep"></span><span class="brand__ctx">Propuesta de colaboraci&oacute;n</span></div>
+<div style="display:flex;align-items:center;gap:26px"><span class="meta">Confidencial</span><div class="menu"><span></span><span></span><span></span></div></div></header>
+<div class="progress"><div class="progress__bar"></div></div>
+<nav class="side-nav"><ul><li><a href="#cover" data-nav><span>00 Inicio</span><i></i></a></li>
+<li><a href="#offer" data-nav><span>01 Qu&eacute; ofrecemos</span><i></i></a></li>
+<li><a href="#includes" data-nav><span>02 Qu&eacute; incluye</span><i></i></a></li>
+<li><a href="#pricing" data-nav><span>03 Modelo econ&oacute;mico</span><i></i></a></li>
+<li><a href="#profit" data-nav><span>04 Rentabilidad</span><i></i></a></li>
+<li><a href="#terms" data-nav><span>05 Modelo</span><i></i></a></li>
+<li><a href="#closing" data-nav><span>Cierre</span><i></i></a></li></ul></nav>
+
+<main>
+
+<!-- 00 COVER -->
+<section id="cover" class="sec sec--light" data-theme="light" data-title="cover">
+<div class="blob" style="width:680px;height:680px;right:-6%;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(190,255,0,.45),transparent 68%)"></div>
+<div class="wrap">
+ <div class="eyebrow reveal"><span class="t">Real Betis &times; Drelife &middot; Second Life</span></div>
+ <h1 class="h1 reveal d1" style="color:var(--ink)">Propuesta de<br><span style="font-family:'Inter',sans-serif;font-style:italic;font-weight:200;letter-spacing:-.02em">colaboraci&oacute;n.</span></span></h1>
+ <p class="lead maxw reveal d2" style="max-width:600px;color:var(--mut-l)">Qu&eacute; os ofrecemos, qu&eacute; incluye el servicio y el modelo econ&oacute;mico para poner en marcha el canal oficial de segunda vida de la afici&oacute;n b&eacute;tica. Incluye el estudio de rentabilidad.</p>
+</div>
+</section>
+
+<!-- 01 QUÉ OFRECEMOS -->
+<section id="offer" class="sec sec--dark" data-theme="dark" data-title="offer">
+<div class="wrap">
+ <div class="eyebrow reveal"><span class="n">01</span><span class="t">Qu&eacute; os ofrecemos</span></div>
+ <h2 class="h2 reveal d1" style="max-width:760px">El triple motor de Drelife.</h2>
+ <p class="lead reveal d2" style="max-width:600px">Un producto tecnol&oacute;gico que digitaliza y escala el servicio, una consultor&iacute;a que crea y activa el canal, y un equipo de operaciones que lo hace crecer d&iacute;a a d&iacute;a.</p>
+ <div class="motors" style="margin-top:48px">
+   <div class="motor lime reveal d1"><div class="ring"><svg><use href="#ic-chip"/></svg></div>
+      <h3 style="color:#fff">Producto tecnol&oacute;gico</h3><div class="chips" style="justify-content:center;margin-top:20px"><span class="chip">Tecnolog&iacute;a propia</span><span class="chip">Integración Plug &amp; Play</span><span class="chip">Escalabilidad</span></div></div>
+   <div class="motor reveal d1"><div class="ring"><svg><use href="#ic-target"/></svg></div>
+      <h3>Consultor&iacute;a estrat&eacute;gica</h3><div class="chips" style="justify-content:center;margin-top:20px"><span class="chip">Estrategia personalizada</span><span class="chip">Modelo de negocio</span><span class="chip">Crecimiento</span></div></div>
+   <div class="motor reveal d1"><div class="ring"><svg><use href="#ic-gear"/></svg></div>
+      <h3>Operaciones</h3><div class="chips" style="justify-content:center;margin-top:20px"><span class="chip">Log&iacute;stica bidireccional</span><span class="chip">Soporte</span><span class="chip">Optimizaci&oacute;n de procesos</span></div></div>
+ </div>
+</div>
+</section>
+
+<!-- 02 QUÉ INCLUYE -->
+<section id="includes" class="sec sec--light sec--auto" data-theme="light" data-title="includes">
+<div class="wrap">
+ <div class="split-head" style="margin-bottom:40px">
+   <div>
+     <div class="eyebrow reveal"><span class="n">02</span><span class="t">Qu&eacute; incluye</span></div>
+     <h2 class="h2 reveal d1">Todo lo necesario para<br>operar el canal.</h2>
+   </div>
+   <p class="lead reveal d2" style="color:var(--mut-l)">Sin coste de infraestructura propia. Drelife aporta y opera la tecnolog&iacute;a, la log&iacute;stica y la atenci&oacute;n al cliente del canal.</p>
+ </div>
+ <div class="g4">
+   <div class="feat reveal d1"><div class="fico"><svg><use href="#ic-box"/></svg></div><h3>Canal white-label</h3><p>Second Life integrada en la web oficial del club, con la identidad del Real Betis.</p></div>
+   <div class="feat reveal d1"><div class="fico"><svg><use href="#ic-rocket"/></svg></div><h3>Venta desde la app</h3><p>Flujo de venta para el aficionado directamente desde la app o la web.</p></div>
+   <div class="feat reveal d1"><div class="fico"><svg><use href="#ic-shield"/></svg></div><h3>Verificaci&oacute;n con IA</h3><p>Autenticidad, reconocimiento de producto y evaluaci&oacute;n del estado de la equipaci&oacute;n.</p></div>
+   <div class="feat reveal d1"><div class="fico"><svg><use href="#ic-tag"/></svg></div><h3>Pricing din&aacute;mico</h3><p>Benchmarking de mercado para fijar el precio de reventa de cada equipaci&oacute;n.</p></div>
+   <div class="feat reveal d2"><div class="fico"><svg><use href="#ic-refresh"/></svg></div><h3>Log&iacute;stica end-to-end</h3><p>Recogida, env&iacute;o y gesti&oacute;n f&iacute;sica de las equipaciones del canal.</p></div>
+   <div class="feat reveal d2"><div class="fico"><svg><use href="#ic-chart"/></svg></div><h3>Dashboard operativo</h3><p>Seguimiento de recogidas, stock y ventas del canal en tiempo real.</p></div>
+   <div class="feat reveal d2"><div class="fico"><svg><use href="#ic-user"/></svg></div><h3>Atenci&oacute;n a la afici&oacute;n</h3><p>Soporte a aficionados vendedores durante todo el proceso.</p></div>
+   <div class="feat reveal d2"><div class="fico"><svg><use href="#ic-spark"/></svg></div><h3>Lanzamiento en 6 semanas</h3><p>Implementaci&oacute;n, QA y salida a producci&oacute;n del canal activo.</p></div>
+ </div>
+</div>
+</section>
+
+<!-- 03 MODELO ECONÓMICO -->
+<section id="pricing" class="sec sec--dark sec--auto" data-theme="dark" data-title="pricing">
+<div class="wrap">
+ <div class="eyebrow reveal"><span class="n">03</span><span class="t">Modelo econ&oacute;mico</span></div>
+ <h2 class="h2 reveal d1" style="max-width:760px">Dos formas de<br><span class="lime">empezar el canal.</span></h2>
+ <p class="lead reveal d2" style="max-width:600px">Sin coste de plataforma ni desarrollo propio. Elegid la estructura que mejor encaje con el arranque del canal.</p>
+
+ <div class="pric" style="margin-top:44px">
+   <div class="pcard reveal d1">
+     <div class="ptag">Modelo A &middot; Fee fijo</div>
+     <div class="pfig"><span class="pn">&euro;3.000</span><span class="pu">/ mes</span></div>
+     <div class="pplus"><i></i><span style="font-size:13px;color:rgba(255,255,255,.5);letter-spacing:.04em;text-transform:uppercase;font-weight:700">m&aacute;s</span><i></i></div>
+     <div class="pfig"><span class="pn" style="font-size:clamp(28px,3vw,40px)">15%</span><span class="pu">variable sobre ventas del canal</span></div>
+     <p class="pnote">Fee fijo mensual m&aacute;s un 15% variable por cada equipaci&oacute;n vendida en el cat&aacute;logo Second Life, desde el primer mes de actividad.</p>
+   </div>
+   <div class="pcard pcard--hi reveal d2">
+     <div class="ptag">Modelo B &middot; Fee reducido</div>
+     <div class="pfig"><span class="pn">&euro;1.500</span><span class="pu">/ mes</span></div>
+     <div class="pplus"><i></i><span style="font-size:13px;color:rgba(255,255,255,.5);letter-spacing:.04em;text-transform:uppercase;font-weight:700">m&aacute;s</span><i></i></div>
+     <div class="pfig"><span class="pn" style="font-size:clamp(28px,3vw,40px)">20%</span><span class="pu">variable por equipaci&oacute;n vendida</span></div>
+     <p class="pnote">Fee fijo mensual reducido a la mitad, m&aacute;s un 20% variable por cada equipaci&oacute;n vendida en el cat&aacute;logo Second Life. A partir del a&ntilde;o 2, el fee fijo queda pendiente de revisi&oacute;n conjunta.</p>
+   </div>
+ </div>
+
+ <div class="callout reveal d3" style="margin-top:24px"><div class="ico"><svg><use href="#ic-coins"/></svg></div><p>El variable se calcula sobre el precio de venta en el canal y se liquida mensualmente. El estudio de rentabilidad de la siguiente secci&oacute;n incluye ambos modelos para que pod&aacute;is comparar.</p></div>
+</div>
+</section>
+
+<!-- 04 RENTABILIDAD -->
+<section id="profit" class="sec sec--light sec--auto" data-theme="light" data-title="profit">
+<style>
+  .eco-val{color:inherit}
+</style>
+<div class="wrap">
+ <div class="eyebrow reveal"><span class="n">04</span><span class="t">Estudio de rentabilidad</span></div>
+ <div class="reveal d1" style="display:flex;align-items:center;gap:10px;margin-top:18px;margin-bottom:8px;flex-wrap:wrap">
+   <span style="font-size:10px;color:var(--mut-l);letter-spacing:.1em;text-transform:uppercase;margin-right:2px">Modelo</span>
+   <button onclick="ecoSetModel('modelA')" data-eco-mtab="modelA" class="eco-mtab eco-active">A &middot; &euro;3.000/mes + 15%</button>
+   <button onclick="ecoSetModel('modelB')" data-eco-mtab="modelB" class="eco-mtab">B &middot; &euro;1.500/mes + 20%</button>
+ </div>
+ <h2 class="h2 reveal d1" style="max-width:760px">La rentabilidad,<br>a&ntilde;o a a&ntilde;o.</h2>
+ <p class="lead reveal d2" style="max-width:620px">Escenario medio construido con los datos del <span id="eco-brand-name">Real Betis</span>. As&iacute; puede evolucionar el resultado neto del canal a lo largo de los a&ntilde;os, seg&uacute;n el modelo econ&oacute;mico elegido.</p>
+
+ <!-- Assumptions -->
+ <div class="eco-assump reveal d2" style="margin-top:30px">
+   <span>Unidades club (a&ntilde;o) <strong id="eco-assump-units" style="color:#111">120.000</strong></span>
+   <span style="color:#ddd">/</span>
+   <span>PVP <strong id="eco-assump-pvp" style="color:#111">&euro;85</strong></span>
+   <span style="color:#ddd">/</span>
+   <span>Precio reventa <strong id="eco-assump-canal" style="color:#111">&euro;51</strong></span>
+   <span style="color:#ddd">/</span>
+   <span>COGS <strong id="eco-assump-cogs" style="color:#111">&euro;17</strong></span>
+   <span style="color:#ddd">/</span>
+   <span>Margen bruto <strong id="eco-assump-margen" style="color:#111">~67%</strong></span>
+   <span style="color:#ddd">/</span>
+   <span>Facturaci&oacute;n anual club <strong id="eco-assump-fact" style="color:#111">&euro;10.200.000</strong></span>
+ </div>
+
+ <!-- De dónde salen los números -->
+ <div class="reveal d2" style="margin-top:18px;font-size:12.5px;line-height:1.7;color:var(--mut-l);max-width:700px">
+   <strong style="color:#111">&iquest;De d&oacute;nde salen estos n&uacute;meros?</strong> Partimos del n&uacute;mero de equipaciones que el club vende cada a&ntilde;o (creciendo un 5% anual) y aplicamos un porcentaje creciente de penetraci&oacute;n del canal de segunda vida, del 3% en el a&ntilde;o 1 hasta el 15% a partir del a&ntilde;o 9 (<span id="eco-assump-pen">a&ntilde;o 1 &middot; 3%</span>). Sobre las equipaciones que entran en el canal calculamos las ventas al precio de reventa (un 40% por debajo del PVP oficial), un margen bruto (~67%, precio de reventa menos COGS), y de ah&iacute; restamos el coste operativo de Drelife (&euro;4 por unidad) y <span id="eco-assump-model-desc">un fee variable del 15% sobre ventas del canal, m&aacute;s un fee fijo de &euro;3.000/mes</span>, para llegar al resultado neto para el club.
+ </div>
+
+ <!-- Year tabs -->
+ <div class="reveal d2" style="display:flex;align-items:center;gap:8px;margin-top:26px;flex-wrap:wrap">
+   <span style="font-size:10px;color:var(--mut-l);letter-spacing:.1em;text-transform:uppercase;margin-right:6px">A&ntilde;o</span>
+   <button onclick="ecoSetYear(1)"  data-eco-tab="1"  class="eco-tab eco-active">1</button>
+   <button onclick="ecoSetYear(2)"  data-eco-tab="2"  class="eco-tab">2</button>
+   <button onclick="ecoSetYear(3)"  data-eco-tab="3"  class="eco-tab">3</button>
+   <button onclick="ecoSetYear(4)"  data-eco-tab="4"  class="eco-tab">4</button>
+   <button onclick="ecoSetYear(5)"  data-eco-tab="5"  class="eco-tab">5</button>
+   <button onclick="ecoSetYear(6)"  data-eco-tab="6"  class="eco-tab">6</button>
+   <button onclick="ecoSetYear(7)"  data-eco-tab="7"  class="eco-tab">7</button>
+   <button onclick="ecoSetYear(8)"  data-eco-tab="8"  class="eco-tab">8</button>
+   <button onclick="ecoSetYear(9)"  data-eco-tab="9"  class="eco-tab">9</button>
+   <button onclick="ecoSetYear(10)" data-eco-tab="10" class="eco-tab">10</button>
+ </div>
+
+ <!-- Main display -->
+ <div class="eco-box eco-main reveal d3" style="margin-top:24px">
+   <div style="padding:34px 30px">
+     <div id="eco-year-label" class="eco-val" style="font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut-l);margin-bottom:14px">A&ntilde;o 1</div>
+     <div id="eco-net" class="eco-val" style="font-size:clamp(36px,4.2vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1">&euro;468.000</div>
+     <div style="margin-top:14px;display:flex;align-items:center;gap:10px">
+       <div style="flex:1;height:5px;background:#ececec;border-radius:999px;overflow:hidden">
+         <div id="eco-pct-bar" style="width:37%;height:100%;background:var(--accent);border-radius:999px;transition:width 320ms ease"></div>
+       </div>
+       <span id="eco-pct" class="eco-val" style="font-size:13px;font-weight:760;min-width:36px;text-align:right">37,1%</span>
+     </div>
+     <div style="margin-top:5px;font-size:11px;color:var(--mut-l)">resultado neto sobre ventas canal</div>
+     <div id="eco-badge" class="eco-val" style="display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:999px;background:var(--accent);color:#111;font-size:11px;font-weight:800;letter-spacing:.02em;margin-top:22px">Canal = 1% de las ventas del club</div>
+   </div>
+   <div style="padding:34px 30px;border-left:1px solid var(--line-l);display:grid;gap:0;align-content:space-between">
+     <div>
+       <div style="font-size:10px;color:var(--mut-l);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">Equipaciones en canal</div>
+       <div id="eco-units" class="eco-val" style="font-size:28px;font-weight:760;letter-spacing:-.02em">30.000</div>
+     </div>
+     <div style="border-top:1px solid var(--line-l);padding-top:18px;margin-top:18px">
+       <div style="font-size:10px;color:var(--mut-l);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">Ventas canal</div>
+       <div id="eco-sales" class="eco-val" style="font-size:28px;font-weight:760;letter-spacing:-.02em">&euro;1.260.000</div>
+     </div>
+     <div style="border-top:1px solid var(--line-l);padding-top:18px;margin-top:18px">
+       <div style="font-size:10px;color:var(--mut-l);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">Coste total canal (operativo + variable Drelife)</div>
+       <div id="eco-cost" class="eco-val" style="font-size:28px;font-weight:760;letter-spacing:-.02em">&euro;372.000</div>
+     </div>
+   </div>
+ </div>
+
+ <!-- Desglose del cálculo -->
+ <div class="eco-box reveal d3" style="margin-top:16px;padding:28px 30px">
+   <div style="font-size:10px;color:var(--mut-l);letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px">Desglose del c&aacute;lculo &middot; a&ntilde;o seleccionado</div>
+   <div style="display:grid;gap:11px">
+     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+       <span style="font-size:13px;color:var(--mut-l)">Ventas canal</span>
+       <span id="eco-wf-sales" class="eco-val" style="font-size:15px;font-weight:760;color:#111">&euro;1.260.000</span>
+     </div>
+     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+       <span style="font-size:13px;color:var(--mut-l)">Margen bruto (~67% s/ventas canal)</span>
+       <span id="eco-wf-margen" class="eco-val" style="font-size:15px;font-weight:760;color:#111">&euro;840.000</span>
+     </div>
+     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+       <span style="font-size:13px;color:var(--mut-l)">&minus; Coste operativo Drelife (verificación, reacondicionamiento, soporte etc.)</span>
+       <span id="eco-wf-opex" class="eco-val" style="font-size:15px;font-weight:760;color:#111">&minus;&euro;120.000</span>
+     </div>
+     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+       <span style="font-size:13px;color:var(--mut-l)">&minus; Fee variable Drelife (<span id="eco-wf-varpct">15</span>% s/ventas canal)</span>
+       <span id="eco-wf-variable" class="eco-val" style="font-size:15px;font-weight:760;color:#111">&minus;&euro;252.000</span>
+     </div>
+     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px">
+       <span style="font-size:13px;color:var(--mut-l)">&minus; Fee fijo mensual</span>
+       <span id="eco-wf-fee" class="eco-val" style="font-size:15px;font-weight:760;color:#111">&minus;&euro;0</span>
+     </div>
+     <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid var(--line-l);padding-top:12px;margin-top:3px">
+       <span style="font-size:13px;font-weight:800;color:#111">= Resultado neto cliente</span>
+       <span id="eco-wf-net" class="eco-val" style="font-size:18px;font-weight:800;color:#111">&euro;468.000</span>
+     </div>
+   </div>
+ </div>
+
+ <!-- Footnote -->
+ <div class="reveal d3" style="margin-top:24px;padding:24px 26px;border-radius:16px;background:var(--card-l);border:1px solid var(--line-l)">
+   <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:var(--ink)">Esta simulaci&oacute;n se ha elaborado a partir de los datos de los que disponemos actualmente y ofrece una estimaci&oacute;n del potencial del canal de reventa para el club. Los resultados finales depender&aacute;n, en gran medida, de la visibilidad que el club otorgue al canal y del nivel de participaci&oacute;n de su afici&oacute;n.</p>
+   <p style="margin:0 0 14px;font-size:15px;line-height:1.7;color:var(--ink)">Desde Drelife acompa&ntilde;aremos al club durante todo el proceso, ofreciendo soporte estrat&eacute;gico y operativo para dise&ntilde;ar, implementar y optimizar acciones que impulsen la adopci&oacute;n del canal y maximicen su rendimiento.</p>
+   <p style="margin:0;font-size:15px;line-height:1.7;color:var(--ink)">Aunque una parte cada vez mayor de los aficionados ya busca opciones de segunda mano para su equipaci&oacute;n, nuestro compromiso va un paso m&aacute;s all&aacute;: contribuir a que esos aficionados identifiquen al propio club como el lugar natural donde comprar y vender sus art&iacute;culos de segunda mano. Para ello, trabajaremos conjuntamente en iniciativas que ayuden a consolidar este nuevo h&aacute;bito de consumo y a posicionar el canal de reventa como una extensi&oacute;n integrada de la experiencia del club.</p>
+ </div>
+</div>
+</section>
+
+<!-- 05 CONDICIONES -->
+<section id="terms" class="sec sec--light sec--auto" data-theme="light" data-title="terms">
+<div class="wrap">
+ <div class="eyebrow reveal"><span class="n">05</span><span class="t">Condiciones</span></div>
+ <div class="split-head" style="margin-bottom:42px">
+   <h2 class="h2 reveal d1">Un modelo que<br>se autofinancia.</h2>
+   <p class="lead reveal d2">El Real Betis no asume infraestructura ni equipo propio para operar el canal.</p>
+ </div>
+ <div class="g3">
+   <div class="card reveal d1"><div class="ico ico--soft"><svg><use href="#ic-layers"/></svg></div><h3>Sin coste extra</h3><div class="rule"></div><p>Drelife aporta y opera toda la tecnolog&iacute;a. Nada que construir ni mantener.</p></div>
+   <div class="card reveal d1"><div class="ico ico--soft"><svg><use href="#ic-link"/></svg></div><h3>Alineado al canal</h3><div class="rule"></div><p>El variable se paga solo sobre lo que realmente se vende en el cat&aacute;logo Second Life.</p></div>
+   <div class="card reveal d1"><div class="ico ico--soft"><svg><use href="#ic-coins"/></svg></div><h3>V&iacute;as de financiaci&oacute;n</h3><div class="rule"></div><p>Podr&iacute;a encajar con PERTE de Econom&iacute;a Circular, a confirmar seg&uacute;n requisitos.</p></div>
+ </div>
+</div>
+</section>
+
+<!-- CLOSING -->
+<section id="closing" class="sec sec--dark closing-sec" data-theme="dark" data-title="closing">
+ <div class="blob" style="width:600px;height:600px;right:-8%;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(190,255,0,.22),transparent 68%)"></div>
+ <div class="wrap" style="flex:1;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2">
+   <div>
+     <div class="eyebrow reveal"><span class="t">Drelife &middot; Second Life</span></div>
+   </div>
+   <p class="manifesto reveal d1" style="margin:0">Dos caminos.<br>Un mismo destino: <span class="lime">vuestro canal de segunda vida.</span></p>
+   <div class="reveal d2" style="border-top:1px solid rgba(255,255,255,.1);padding-top:36px">
+     <div style="font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px">Siguiente paso</div>
+     <p class="next-line" style="font-size:clamp(16px,1.6vw,20px);font-weight:750;letter-spacing:-.015em;line-height:1.3;color:#fff;margin:0">Elegir modelo econ&oacute;mico y cerrar la fecha de kick-off.</p>
+   </div>
+ </div>
+</section>
+
+</main>
+<script>
+(()=>{
+/* ── reveal / scroll / nav (idéntico al deck) ── */
+const secs=[...document.querySelectorAll('.sec')];const navs=[...document.querySelectorAll('[data-nav]')];
+const bar=document.querySelector('.progress__bar');
+function onScroll(){const max=document.documentElement.scrollHeight-innerHeight;bar.style.width=Math.min(100,scrollY/max*100)+'%';
+let cur=secs[0];for(const s of secs){const r=s.getBoundingClientRect();if(r.top<=90&&r.bottom>90){cur=s;break;}}
+document.body.dataset.top=cur.dataset.theme;
+navs.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur.id));}
+const ro=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');o.unobserve(e.target);}}),{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+addEventListener('keydown',e=>{const i=secs.indexOf(secs.find(s=>{const r=s.getBoundingClientRect();return r.top<=90&&r.bottom>90;}));
+if(['ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();secs[Math.min(secs.length-1,i+1)].scrollIntoView({behavior:'smooth'});}
+if(['ArrowUp','PageUp'].includes(e.key)){e.preventDefault();secs[Math.max(0,i-1)].scrollIntoView({behavior:'smooth'});}});
+
+/* ── simulador de rentabilidad ── */
+/* Datos reales del escenario MEDIO (Excel PROPUESTA_DE_VALOR_DRELIFE_Y_P_L, hoja MEDIO).
+   PVP oficial 85 euros, precio de reventa 51 euros (-40% vs PVP), COGS 17 euros, margen bruto ~67%.
+   unitsTotal/factTotal = unidades y facturación TOTAL del club ese año (crecen 5% anual).
+   pen = % de penetración del canal de segunda vida ese año (3% año 1 hasta 15% año 9-10).
+   units/sales = unidades y ventas QUE PASAN por el canal Second Life ese año (iguales en ambos modelos).
+   Modelo A: fee fijo €3.000/mes (€36.000/año) + 15% variable sobre ventas del canal.
+   Modelo B: fee fijo €1.500/mes (€18.000/año) + 20% variable sobre ventas del canal.
+   Waterfall: sales -> margen (~67%) -> menos opex (€4/ud, igual en ambos modelos) -> menos variable Drelife -> menos fee fijo -> net. */
+
+var ecoData = {
+  modelA: [
+    { unitsTotal:120000, factTotal:10200000, units:3600, sales:183600, margen:122400, opex:14400, variable:27540, fee:36000, cost:41940, net:44460, pct:24.2, pen:3, varpct:15 },
+    { unitsTotal:126000, factTotal:10710000, units:5040, sales:257040, margen:171360, opex:20160, variable:38556, fee:36000, cost:58716, net:76644, pct:29.8, pen:4, varpct:15 },
+    { unitsTotal:132300, factTotal:11245500, units:6615, sales:337365, margen:224910, opex:26460, variable:50605, fee:36000, cost:77065, net:111845, pct:33.2, pen:5, varpct:15 },
+    { unitsTotal:138915, factTotal:11807775, units:9724, sales:495927, margen:330618, opex:38896, variable:74389, fee:36000, cost:113285, net:181333, pct:36.6, pen:7, varpct:15 },
+    { unitsTotal:145861, factTotal:12398164, units:13127, sales:669501, margen:446334, opex:52510, variable:100425, fee:36000, cost:152935, net:257399, pct:38.4, pen:9, varpct:15 },
+    { unitsTotal:153154, factTotal:13018072, units:15315, sales:781084, margen:520723, opex:61262, variable:117163, fee:36000, cost:178425, net:306299, pct:39.2, pen:10, varpct:15 },
+    { unitsTotal:160811, factTotal:13668976, units:19297, sales:984166, margen:656111, opex:77190, variable:147625, fee:36000, cost:224815, net:395296, pct:40.2, pen:12, varpct:15 },
+    { unitsTotal:168852, factTotal:14352424, units:23639, sales:1205604, margen:803736, opex:94557, variable:180841, fee:36000, cost:275398, net:492338, pct:40.8, pen:14, varpct:15 },
+    { unitsTotal:177295, factTotal:15070046, units:26594, sales:1356304, margen:904203, opex:106377, variable:203446, fee:36000, cost:309823, net:558380, pct:41.2, pen:15, varpct:15 },
+    { unitsTotal:186159, factTotal:15823548, units:27924, sales:1424119, margen:949413, opex:111696, variable:213618, fee:36000, cost:325314, net:588099, pct:41.3, pen:15, varpct:15 }
+  ],
+  modelB: [
+    { unitsTotal:120000, factTotal:10200000, units:3600, sales:183600, margen:122400, opex:14400, variable:36720, fee:18000, cost:51120, net:53280, pct:29.0, pen:3, varpct:20 },
+    { unitsTotal:126000, factTotal:10710000, units:5040, sales:257040, margen:171360, opex:20160, variable:51408, fee:18000, cost:71568, net:81792, pct:31.8, pen:4, varpct:20 },
+    { unitsTotal:132300, factTotal:11245500, units:6615, sales:337365, margen:224910, opex:26460, variable:67473, fee:18000, cost:93933, net:112977, pct:33.5, pen:5, varpct:20 },
+    { unitsTotal:138915, factTotal:11807775, units:9724, sales:495927, margen:330618, opex:38896, variable:99185, fee:18000, cost:138082, net:174536, pct:35.2, pen:7, varpct:20 },
+    { unitsTotal:145861, factTotal:12398164, units:13127, sales:669501, margen:446334, opex:52510, variable:133900, fee:18000, cost:186410, net:241924, pct:36.1, pen:9, varpct:20 },
+    { unitsTotal:153154, factTotal:13018072, units:15315, sales:781084, margen:520723, opex:61262, variable:156217, fee:18000, cost:217478, net:285244, pct:36.5, pen:10, varpct:20 },
+    { unitsTotal:160811, factTotal:13668976, units:19297, sales:984166, margen:656111, opex:77190, variable:196833, fee:18000, cost:274023, net:364088, pct:37.0, pen:12, varpct:20 },
+    { unitsTotal:168852, factTotal:14352424, units:23639, sales:1205604, margen:803736, opex:94557, variable:241121, fee:18000, cost:335678, net:450058, pct:37.3, pen:14, varpct:20 },
+    { unitsTotal:177295, factTotal:15070046, units:26594, sales:1356304, margen:904203, opex:106377, variable:271261, fee:18000, cost:377638, net:508565, pct:37.5, pen:15, varpct:20 },
+    { unitsTotal:186159, factTotal:15823548, units:27924, sales:1424119, margen:949413, opex:111696, variable:284824, fee:18000, cost:396519, net:534893, pct:37.6, pen:15, varpct:20 }
+  ]
+};
+var ecoModel = 'modelA', ecoYear = 1;
+var ecoModelDesc = {
+  modelA: 'un fee variable del 15% sobre ventas del canal, más un fee fijo de €3.000/mes',
+  modelB: 'un fee variable del 20% sobre ventas del canal, más un fee fijo de €1.500/mes'
+};
+
+function fmt(n){ return '€' + n.toLocaleString('es-ES'); }
+function fmtSigned(n){ return (n < 0 ? '−' : '') + '€' + Math.abs(n).toLocaleString('es-ES'); }
+
+function ecoRender(){
+  var d = ecoData[ecoModel][ecoYear - 1];
+  var vals = [
+    ['eco-year-label', 'Año ' + ecoYear],
+    ['eco-net', fmt(d.net)],
+    ['eco-pct', d.pct.toString().replace('.', ',') + '%'],
+    ['eco-units', d.units.toLocaleString('es-ES')],
+    ['eco-sales', fmt(d.sales)],
+    ['eco-cost', fmt(d.cost)],
+    ['eco-wf-sales', fmt(d.sales)],
+    ['eco-wf-margen', fmt(d.margen)],
+    ['eco-wf-opex', '−' + fmt(d.opex)],
+    ['eco-wf-variable', '−' + fmt(d.variable)],
+    ['eco-wf-varpct', d.varpct],
+    ['eco-wf-fee', (ecoModel === 'modelB' && ecoYear > 1) ? 'Pendiente de revisi\u00f3n' : ('−' + fmt(d.fee))],
+    ['eco-wf-net', fmt(d.net)]
+  ];
+  vals.forEach(function(pair){
+    var el = document.getElementById(pair[0]);
+    if (!el) return;
+    el.classList.add('eco-fade');
+    setTimeout(function(){ el.textContent = pair[1]; el.classList.remove('eco-fade'); }, 120);
+  });
+  setTimeout(function(){ document.getElementById('eco-pct-bar').style.width = d.pct + '%'; }, 60);
+
+  var badge = document.getElementById('eco-badge');
+  badge.classList.add('eco-fade');
+  setTimeout(function(){
+    badge.textContent = 'Canal = ' + d.pen + '% de las ventas del club';
+    badge.style.background = '#BEFF00'; badge.style.color = '#111';
+    badge.classList.remove('eco-fade');
+  }, 120);
+
+  var assumpUnits = document.getElementById('eco-assump-units'); if (assumpUnits) assumpUnits.textContent = d.unitsTotal.toLocaleString('es-ES');
+  var assumpFact = document.getElementById('eco-assump-fact'); if (assumpFact) assumpFact.textContent = fmt(d.factTotal);
+  var assumpPen = document.getElementById('eco-assump-pen'); if (assumpPen) assumpPen.textContent = 'año ' + ecoYear + ' · ' + d.pen + '%';
+  var modelDesc = document.getElementById('eco-assump-model-desc'); if (modelDesc) modelDesc.textContent = ecoModelDesc[ecoModel];
+
+  document.querySelectorAll('[data-eco-tab]').forEach(function(t){
+    t.classList.toggle('eco-active', parseInt(t.dataset.ecoTab) === ecoYear);
+  });
+  document.querySelectorAll('[data-eco-mtab]').forEach(function(t){
+    t.classList.toggle('eco-active', t.dataset.ecoMtab === ecoModel);
+  });
+  var brandLabel = document.getElementById('eco-brand-name');
+  if (brandLabel) brandLabel.textContent = 'Real Betis';
+}
+
+window.ecoSetYear = function(y){ ecoYear = y; ecoRender(); };
+window.ecoSetModel = function(m){ ecoModel = m; ecoRender(); };
+ecoRender();
+
+})();
+</script>
+</body></html>
