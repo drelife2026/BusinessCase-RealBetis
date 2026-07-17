@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drelife — Deporte, segunda mano oficial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <div class="header__brand">
+      <span class="header__dot"></span>
+      <span class="header__logo">Drelife</span>
+      <span class="header__tagline">DEPORTE&nbsp;·&nbsp;SEGUNDA MANO OFICIAL</span>
+    </div>
+    <nav class="header__actions">
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servicios">Servicios</a>
+  <a href="#productos">Qué ofrecemos</a>
+  <a href="#proceso-resale">Proceso Resale</a>
+  <a href="#retorno">¿Por qué importa?</a>
+  <a href="#plataforma">Ecosistema Digital</a>
+  <a href="#metodologia">Cómo trabajamos</a>
+  <a href="#implementacion">Implementación</a>
+  <a href="#marcas">Valor para las marcas</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="hero__bg">
+    <img src="hero-betis.jpg" alt="Jugadores del Real Betis celebrando un gol" class="hero__img">
+    <div class="hero__overlay"></div>
+  </div>
+
+  <div class="hero__content">
+    <p class="eyebrow">REAL BETIS&nbsp;x&nbsp;DRELIFE&nbsp;·&nbsp;LA PASIÓN TAMBIÉN TIENE UNA SEGUNDA VIDA</p>
+    <h1 class="hero__title">
+      La pasión puede<br>
+      cambiar de dueño.<br>
+      <span class="lime">Nunca de colores.</span>
+    </h1>
+    <p class="hero__desc">Un ecosistema desde donde comprar, vender y compartir de forma segura el equipamiento oficial de la comunidad de béticos dentro del propio canal del club.</p>
+    <a href="#servicios" class="hero__cta">
+      <span class="hero__cta-icon">↗</span>
+      <span>Nuestros servicios</span>
+    </a>
+  </div>
+
+  <div class="hero__metrics reveal">
+    <div class="metric">
+      <span class="metric__value">45%</span>
+      <span class="metric__label">valor medio recuperado por el vendedor sobre el precio del artículo</span>
+      <span class="stat-source">Fuente: vibbo, sobre +730.000 vendedores de material deportivo de segunda mano</span>
+    </div>
+    <div class="metric">
+      <span class="metric__value">1,35M</span>
+      <span class="metric__label">artículos deportivos de segunda mano vendidos en 2024</span>
+      <span class="stat-source">Fuente: Decathlon, informe de resultados 2024</span>
+    </div>
+    <div class="metric">
+      <span class="metric__value">524.000t</span>
+      <span class="metric__label">de CO₂ evitadas por la venta de artículos de segunda mano en España en 2024</span>
+      <span class="stat-source">Fuente: Wallapop, Modelo de Impacto</span>
+    </div>
+    <div class="metric">
+      <span class="metric__value">87%</span>
+      <span class="metric__label">de la Generación Z compra en plataformas de segunda mano</span>
+      <span class="stat-source">Fuente: Milanuncios, informe sobre hábitos de consumo Gen Z, 2025</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="services" id="servicios">
+  <div class="services__top reveal">
+    <p class="eyebrow eyebrow--dark">01&nbsp;&nbsp;SERVICIOS</p>
+    <div class="services__heading">
+      <h2 class="services__title">
+        Historias que continúan<br>
+        <span class="lime">cuando termina la temporada.</span>
+      </h2>
+      <div class="services__copy">
+        <p>Drelife convierte tu equipamiento oficial en un canal propio de segunda vida, donde cada pieza sigue formando parte de la historia del club.</p>
+        <a href="#productos" class="link-arrow">Ver cómo funciona <span>↗</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="services__grid">
+    <article class="card card--black card--lime-frame reveal">
+      <div class="card__top">
+        <span class="card__num">01</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Resale</h3>
+      <p class="card__desc">Reventa de prendas pre-owned en tu canal oficial de segunda mano.</p>
+      <div class="card__img">
+        <img src="https://i.pinimg.com/736x/61/fa/06/61fa06ca6ed8a0a922ab0f3244acf2fc.jpg" alt="Bicicleta de montaña reacondicionada">
+      </div>
+      <button type="button" id="resaleInfoBtn" class="btn btn--outline-lime btn--sm card__info-btn">Más información</button>
+    </article>
+
+    <article class="card card--light reveal">
+      <div class="card__top">
+        <span class="card__num">02</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Repairs</h3>
+      <p class="card__desc">Reparación y revisión de cada producto para alargar la vida útil de tu equipamiento.</p>
+      <div class="card__img">
+        <img src="https://i.pinimg.com/736x/99/d0/55/99d05580a916eb85b8ada605fdbefade.jpg" alt="Bicicleta reacondicionada de detalle">
+      </div>
+    </article>
+
+    <article class="card card--lime reveal">
+      <div class="card__top">
+        <span class="card__num">03</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Recycle</h3>
+      <p class="card__desc">Convertimos residuos en nuevos recursos y cerramos el ciclo de vida del producto.</p>
+      <div class="card__img">
+        <img src="https://i.pinimg.com/1200x/90/99/00/909900184e0eff4107a6f050e5a8768d.jpg" alt="Zapatillas running de segunda mano">
+      </div>
+    </article>
+
+    <article class="card card--black reveal">
+      <div class="card__top">
+        <span class="card__num">04</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Returns</h3>
+      <p class="card__desc">Gestiona devoluciones de forma inteligente y reducimos su impacto ambiental.</p>
+      <div class="card__img">
+        <img src="imagenes/df0ca8c53d1487c9472e2d80fb587529.jpg" alt="Butacas verdes del estadio del Real Betis">
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 02 · QUÉ OFRECEMOS ============ -->
+<section class="offer" id="productos">
+  <div class="offer__top reveal">
+    <p class="eyebrow eyebrow--light">02&nbsp;&nbsp;QUÉ OFRECEMOS</p>
+    <h2 class="offer__title">
+      El triple motor<br>
+      <span class="lime">de Drelife.</span>
+    </h2>
+    <p class="offer__subtitle">Un producto tecnológico que digitaliza y escala el servicio, y una consultoría que crea, activa y hace crecer el canal.</p>
+  </div>
+
+  <div class="offer__grid">
+    <div class="offer-item reveal">
+      <span class="icon-circle icon-circle--featured">⚙</span>
+      <h3 class="offer-item__title">Producto tecnológico</h3>
+      <p class="offer-item__desc">Plataforma que permite impulsar tu canal de reventa oficial.</p>
+      <div class="offer-item__tags">
+        <span class="tag">Tecnología propia</span>
+        <span class="tag">Integración Plug &amp; Play</span>
+        <span class="tag">Escalabilidad</span>
+      </div>
+    </div>
+
+    <div class="offer-item reveal">
+      <span class="icon-circle">◎</span>
+      <h3 class="offer-item__title">Consultoría estratégica</h3>
+      <p class="offer-item__desc">Definimos la mejor estrategia y modelo para tu negocio circular.</p>
+      <div class="offer-item__tags">
+        <span class="tag">Estrategia personalizada</span>
+        <span class="tag">Modelo de negocio</span>
+        <span class="tag">Crecimiento</span>
+      </div>
+    </div>
+
+    <div class="offer-item reveal">
+      <span class="icon-circle">☀</span>
+      <h3 class="offer-item__title">Operaciones</h3>
+      <p class="offer-item__desc">Gestionamos tu canal de principio a fin para maximizar su rendimiento.</p>
+      <div class="offer-item__tags">
+        <span class="tag">Logística bidireccional</span>
+        <span class="tag">Soporte</span>
+        <span class="tag">Reacondicionamiento</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · PROCESO RESALE ============ -->
+<section class="resale-process" id="proceso-resale">
+  <div class="resale-process__top reveal">
+    <p class="eyebrow eyebrow--dark">03&nbsp;&nbsp;PROCESO RESALE</p>
+    <h2 class="resale-process__title">
+      De la prenda usada<br>
+      <span class="lime">a la nueva compra.</span>
+    </h2>
+    <p class="resale-process__subtitle">Un circuito continuo entre cliente, club y Drelife que convierte cada artículo recuperada en una nueva oportunidad de venta dentro de vuestro propio ecosistema.</p>
+
+    <div class="resale-legend">
+      <span class="resale-legend__item"><span class="resale-dot resale-dot--client"></span>Cliente</span>
+      <span class="resale-legend__item"><span class="resale-dot resale-dot--brand"></span>Club · Dashboard</span>
+      <span class="resale-legend__item"><span class="resale-dot resale-dot--ops"></span>Drelife · Operaciones</span>
+    </div>
+  </div>
+
+  <div class="rp-track-outer reveal">
+    <svg class="rp-track-svg" viewBox="0 0 1200 780" preserveAspectRatio="none" aria-hidden="true">
+      <path class="rp-path" d="M140,260 L1060,260 A130,130 0 0 1 1060,520 L140,520"/>
+      <path class="rp-path rp-path--loop" d="M140,520 A130,130 0 0 1 140,260"/>
+    </svg>
+
+    <div class="rp-node rp-node--top rp-node--client" style="left:11.667%;top:33.333%;">
+      <span class="rp-node__icon">⊙</span>
+      <span class="rp-node__num">01</span>
+      <span class="rp-node__actor">Cliente</span>
+      <h3 class="rp-node__title">Portal de entrada</h3>
+      <p class="rp-node__desc">Home del canal Resale: comprar catálogo pre-owned o vender una prenda.</p>
+    </div>
+
+    <div class="rp-node rp-node--top rp-node--brand" style="left:37.222%;top:33.333%;">
+      <span class="rp-node__icon">↗</span>
+      <span class="rp-node__num">02</span>
+      <span class="rp-node__actor">Cliente → Club</span>
+      <h3 class="rp-node__title">Solicitud de venta</h3>
+      <p class="rp-node__desc">El club valida el producto y tasa desde el Dashboard de Drelife.</p>
+    </div>
+
+    <div class="rp-node rp-node--top rp-node--brand" style="left:62.778%;top:33.333%;">
+      <span class="rp-node__icon">✳</span>
+      <span class="rp-node__num">03</span>
+      <span class="rp-node__actor">Club → Cliente</span>
+      <h3 class="rp-node__title">Notificación automática</h3>
+      <p class="rp-node__desc">El cliente recibe la decisión en la app y acepta o rechaza la valoración.</p>
+    </div>
+
+    <div class="rp-node rp-node--top rp-node--client" style="left:88.333%;top:33.333%;">
+      <span class="rp-node__icon">◈</span>
+      <span class="rp-node__num">04</span>
+      <span class="rp-node__actor">Cliente</span>
+      <h3 class="rp-node__title">Preparación del envío</h3>
+      <p class="rp-node__desc">Confirma sus datos. El sistema genera automáticamente la etiqueta de transporte.</p>
+    </div>
+
+    <div class="rp-node rp-node--bottom rp-node--ops" style="left:88.333%;top:66.667%;">
+      <span class="rp-node__icon">▥</span>
+      <span class="rp-node__num">05</span>
+      <span class="rp-node__actor">Drelife · Almacén</span>
+      <h3 class="rp-node__title">Recepción y verificación</h3>
+      <p class="rp-node__desc">Inspección física de la prenda y actualización del estado en el Dashboard.</p>
+    </div>
+
+    <div class="rp-node rp-node--bottom rp-node--brand" style="left:50%;top:66.667%;">
+      <span class="rp-node__icon">◉</span>
+      <span class="rp-node__num">06</span>
+      <span class="rp-node__actor">Club · Dashboard</span>
+      <h3 class="rp-node__title">Aprobación del voucher</h3>
+      <p class="rp-node__desc">El club aprueba el incentivo y el sistema lo envía automáticamente al cliente.</p>
+    </div>
+
+    <div class="rp-node rp-node--bottom rp-node--client" style="left:11.667%;top:66.667%;">
+      <span class="rp-node__icon">▣</span>
+      <span class="rp-node__num">07</span>
+      <span class="rp-node__actor">Cliente</span>
+      <h3 class="rp-node__title">Nueva compra</h3>
+      <p class="rp-node__desc">El cliente vuelve al club y canjea su voucher en una nueva compra.</p>
+    </div>
+  </div>
+
+  <div class="rp-mobile reveal">
+    <div class="rp-mrow"><span class="rp-node__icon rp-node--client"><span>⊙</span></span><div><div class="rp-mnum">01</div><div class="rp-mactor">Cliente</div><div class="rp-mtitle">Portal de entrada</div><p class="rp-mdesc">Home del canal Resale: comprar catálogo pre-owned o vender una prenda.</p></div></div>
+    <div class="rp-mrow"><span class="rp-node__icon rp-node--brand"><span>↗</span></span><div><div class="rp-mnum">02</div><div class="rp-mactor">Cliente → Club</div><div class="rp-mtitle">Solicitud de venta</div><p class="rp-mdesc">El club valida el producto y tasa desde el Dashboard de Drelife.</p></div></div>
+    <div class="rp-mrow"><span class="rp-node__icon rp-node--brand"><span>✳</span></span><div><div class="rp-mnum">03</div><div class="rp-mactor">Club → Cliente</div><div class="rp-mtitle">Notificación automática</div><p class="rp-mdesc">El cliente recibe la decisión en la app y acepta o rechaza la valoración.</p></div></div>
+    <div class="rp-mrow"><span class="rp-node__icon rp-node--client"><span>◈</span></span><div><div class="rp-mnum">04</div><div class="rp-mactor">Cliente</div><div class="rp-mtitle">Preparación del envío</div><p class="rp-mdesc">Confirma sus datos. El sistema genera automáticamente la etiqueta de transporte.</p></div></div>
+    <div class="rp-mrow"><span class="rp-node__icon rp-node--ops"><span>▥</span></span><div><div class="rp-mnum">05</div><div class="rp-mactor">Drelife · Almacén</div><div class="rp-mtitle">Recepción y verificación</div><p class="rp-mdesc">Inspección física de la prenda y actualización del estado en el Dashboard.</p></div></div>
+    <div class="rp-mrow"><span class="rp-node__icon rp-node--brand"><span>◉</span></span><div><div class="rp-mnum">06</div><div class="rp-mactor">Club · Dashboard</div><div class="rp-mtitle">Aprobación del voucher</div><p class="rp-mdesc">El club aprueba el incentivo y el sistema lo envía automáticamente al cliente.</p></div></div>
+    <div class="rp-mrow"><span class="rp-node__icon rp-node--client"><span>▣</span></span><div><div class="rp-mnum">07</div><div class="rp-mactor">Cliente</div><div class="rp-mtitle">Nueva compra</div><p class="rp-mdesc">El cliente vuelve al club y canjea su voucher en una nueva compra.</p></div></div>
+  </div>
+
+  <div class="resale-process__note reveal">
+    <span class="resale-process__note-icon">↻</span>
+    <p>Cada prenda recuperada es reacondicionada para poder <strong>volver a ponerse a la venta</strong>. El paso 07 cierra el circuito: cada voucher vuelve a convertirse en <strong>una nueva compra</strong> dentro del club.</p>
+  </div>
+</section>
+
+<!-- ============ 04 · ¿POR QUÉ IMPORTA? ============ -->
+<section class="why-matters" id="retorno">
+  <div class="why-matters__top reveal">
+    <p class="eyebrow eyebrow--dark">04&nbsp;&nbsp;¿POR QUÉ IMPORTA?</p>
+    <h2 class="why-matters__title">
+      Un canal.<br>
+      <span class="lime">Cuatro retornos.</span>
+    </h2>
+  </div>
+
+  <div class="why-matters__grid">
+    <article class="card card--compact card--black reveal">
+      <div class="card__top">
+        <span class="icon-circle">↺</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Reactivación de la compra</h3>
+      <p class="card__desc">Da a los fans una segunda oportunidad de compra, sin salir del ecosistema oficial del club.</p>
+    </article>
+
+    <article class="card card--compact card--light reveal">
+      <div class="card__top">
+        <span class="icon-circle">▥</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Inteligencia de demanda</h3>
+      <p class="card__desc">Identifica qué equipaciones, tallas y dorsales tienen más rotación en el mercado de segunda mano.</p>
+    </article>
+
+    <article class="card card--compact card--lime reveal">
+      <div class="card__top">
+        <span class="icon-circle">◎</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Visibilidad y SEO propios</h3>
+      <p class="card__desc">Cada equipación revendida suma tráfico y presencia del club en tu propio dominio.</p>
+    </article>
+
+    <article class="card card--compact card--black reveal">
+      <div class="card__top">
+        <span class="icon-circle">▦</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Coherencia de marca</h3>
+      <p class="card__desc">Todo el proceso ocurre bajo la identidad del club, sin fugas hacia plataformas de terceros.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 05 · LANDING PAGE + APP ============ -->
+<section class="ecosystem" id="plataforma">
+  <div class="ecosystem__content reveal">
+    <p class="eyebrow eyebrow--light">05&nbsp;&nbsp;ECOSISTEMA DIGITAL</p>
+    <h2 class="ecosystem__title">
+      Tu canal oficial<br>
+      de segunda mano.<br>
+      <span class="lime">En web y app.</span>
+    </h2>
+    <p class="ecosystem__desc">Un mismo canal, pensado para funcionar igual de bien en el navegador que en el móvil. Catálogo, precios y experiencia de compra sincronizados en tiempo real.</p>
+    <div class="ecosystem__actions">
+      <a href="#plataforma" class="btn btn--lime">Ver Landing</a>
+      <a href="#" id="verAppBtn" class="btn btn--outline">Ver App</a>
+    </div>
+  </div>
+
+  <div class="ecosystem__mockups reveal">
+    <div class="mockup mockup--desktop">
+      <iframe src="landing/index.html" style="width:100%; height:100%; border:none; border-radius:var(--radius-m);"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODAL APP ============ -->
+<div class="app-modal" id="appModal" aria-hidden="true">
+  <div class="app-modal__backdrop" data-modal-close></div>
+  <div class="app-modal__panel" role="dialog" aria-modal="true" aria-label="Real Betis Second Life — App">
+    <button type="button" class="app-modal__close" data-modal-close aria-label="Cerrar">✕</button>
+    <iframe class="app-modal__frame" src="app/index.html" title="Real Betis Second Life — App"></iframe>
+  </div>
+</div>
+
+<!-- ============ MODAL RESALE ============ -->
+<div class="info-modal" id="resaleModal" aria-hidden="true">
+  <div class="info-modal__backdrop" data-modal-close></div>
+  <div class="info-modal__panel" role="dialog" aria-modal="true" aria-label="Resale — más información">
+    <button type="button" class="info-modal__close" data-modal-close aria-label="Cerrar">✕</button>
+    <span class="eyebrow eyebrow--dark">RESALE</span>
+    <h3 class="info-modal__title">Reventa de equipamiento oficial</h3>
+    <ul class="info-modal__list">
+      <li>
+        <strong>Canal Oficial</strong>
+        <p>Fans y aficionados compran y venden equipamiento oficial dentro del ecosistema del club.</p>
+      </li>
+      <li>
+        <strong>Certificación</strong>
+        <p>Cada producto pasa por un proceso de verificación que garantiza su autenticidad.</p>
+      </li>
+      <li>
+        <strong>Circularidad</strong>
+        <p>Cada pieza tiene una segunda vida, alargando su valor y vida útil.</p>
+      </li>
+      <li>
+        <strong>Experiencia</strong>
+        <p>Toda compra y venta ocurre bajo la identidad y los estándares del club, de principio a fin.</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ 06 · CÓMO TRABAJAMOS ============ -->
+<section class="how-we-work" id="metodologia">
+  <div class="how-we-work__inner">
+    <div class="how-we-work__left reveal">
+      <p class="eyebrow eyebrow--dark">06&nbsp;&nbsp;CÓMO TRABAJAMOS</p>
+      <h2 class="how-we-work__title">
+        Creamos,<br>
+        activamos<br>
+        y gestionamos<br>
+        tu canal<br>
+        para que genere<br>
+        <span class="lime">valor real.</span>
+      </h2>
+    </div>
+
+    <div class="how-we-work__right">
+      <div class="work-block reveal">
+        <span class="work-block__num">01</span>
+        <h3 class="work-block__title">Creamos</h3>
+        <p class="work-block__desc">Diseñamos tu canal oficial de segunda mano: marca, catálogo, precios y experiencia de usuario.</p>
+      </div>
+      <div class="work-block reveal">
+        <span class="work-block__num">02</span>
+        <h3 class="work-block__title">Activamos</h3>
+        <p class="work-block__desc">Lanzamos el canal y ponemos en marcha la operativa de recogida, revisión y publicación.</p>
+      </div>
+      <div class="work-block reveal">
+        <span class="work-block__num">03</span>
+        <h3 class="work-block__title">Gestionamos</h3>
+        <p class="work-block__desc">Operamos el día a día: logística, atención al cliente y gestión de stock de segunda mano.</p>
+      </div>
+      <div class="work-block reveal">
+        <span class="work-block__num">04</span>
+        <h3 class="work-block__title">Optimizamos</h3>
+        <p class="work-block__desc">Analizamos datos reales de venta y ajustamos precios, catálogo y comunicación para maximizar resultados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 · PROCESO DE IMPLEMENTACIÓN ============ -->
+<section class="rollout" id="implementacion">
+  <div class="rollout__top reveal">
+    <p class="eyebrow eyebrow--light">07&nbsp;&nbsp;IMPLEMENTACIÓN</p>
+    <h2 class="rollout__title">
+      De la firma<br>
+      al lanzamiento<br>
+      <span class="lime">en 6 semanas.</span>
+    </h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline__item reveal">
+      <div class="timeline__node"><span></span></div>
+      <div class="timeline__body">
+        <div class="timeline__head">
+          <h3 class="timeline__name">Kick-off &amp; Configuración</h3>
+          <span class="timeline__week">Semana 1</span>
+        </div>
+        <ul class="timeline__tasks">
+          <li>Definición de objetivos</li>
+          <li>Configuración de marca y catálogo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline__item reveal">
+      <div class="timeline__node"><span></span></div>
+      <div class="timeline__body">
+        <div class="timeline__head">
+          <h3 class="timeline__name">Storefront &amp; App</h3>
+          <span class="timeline__week">Semanas 2–3</span>
+        </div>
+        <ul class="timeline__tasks">
+          <li>Diseño del canal web</li>
+          <li>Integración con la app</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline__item reveal">
+      <div class="timeline__node"><span></span></div>
+      <div class="timeline__body">
+        <div class="timeline__head">
+          <h3 class="timeline__name">Operativa &amp; Intake</h3>
+          <span class="timeline__week">Semana 4</span>
+        </div>
+        <ul class="timeline__tasks">
+          <li>Flujo de recogida y verificación</li>
+          <li>Formación del equipo</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline__item reveal">
+      <div class="timeline__node"><span></span></div>
+      <div class="timeline__body">
+        <div class="timeline__head">
+          <h3 class="timeline__name">Piloto cerrado</h3>
+          <span class="timeline__week">Semana 5</span>
+        </div>
+        <ul class="timeline__tasks">
+          <li>Prueba con grupo reducido de usuarios</li>
+          <li>Ajustes finales</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline__item timeline__item--lime reveal">
+      <div class="timeline__node"><span></span></div>
+      <div class="timeline__body">
+        <div class="timeline__head">
+          <h3 class="timeline__name">Go Live</h3>
+          <span class="timeline__week">Semana 6</span>
+        </div>
+        <ul class="timeline__tasks">
+          <li>Lanzamiento</li>
+          <li>Monitorización en tiempo real</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 · VALOR PARA LAS MARCAS ============ -->
+<section class="brand-value" id="marcas">
+  <div class="brand-value__top reveal">
+    <p class="eyebrow eyebrow--light">08&nbsp;&nbsp;VALOR PARA LAS MARCAS</p>
+    <h2 class="brand-value__title">
+      Más que segunda mano.<br>
+      <span class="lime">Un nuevo activo para el Real Betis.</span>
+    </h2>
+    <p class="brand-value__subtitle">La circularidad no solo genera impacto ambiental, también crea nuevas oportunidades de negocio y fortalece la relación entre la marca y su comunidad.</p>
+  </div>
+
+  <div class="brand-value__grid">
+    <article class="card card--compact card--black reveal">
+      <div class="card__top">
+        <span class="icon-circle">♻</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Sostenibilidad real</h3>
+      <p class="card__desc">Alarga la vida útil de tus piezas y reduce el impacto ambiental de toda tu cadena de valor.</p>
+    </article>
+
+    <article class="card card--compact card--light reveal">
+      <div class="card__top">
+        <span class="icon-circle">↗</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Nuevas fuentes de ingresos</h3>
+      <p class="card__desc">Convierte cada producto revendido en un nuevo punto de facturación, sin coste de producción.</p>
+    </article>
+
+    <article class="card card--compact card--lime reveal">
+      <div class="card__top">
+        <span class="icon-circle">♥</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Fidelización de la comunidad</h3>
+      <p class="card__desc">Acompaña a tus fans en todo el ciclo de vida del producto y refuerza su vínculo con el club.</p>
+    </article>
+
+    <article class="card card--compact card--black reveal">
+      <div class="card__top">
+        <span class="icon-circle">▥</span>
+        <span class="card__arrow">↗</span>
+      </div>
+      <h3 class="card__title">Datos e inteligencia</h3>
+      <p class="card__desc">Accede a información real sobre uso, estado y demanda de tu merchandising en el mercado secundario.</p>
+    </article>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <span class="header__logo">Drelife</span>
+    <p>&copy; 2026 Drelife. Segunda vida para el equipamiento deportivo.</p>
+    <a href="propuesta/index.html" class="btn btn--outline btn--sm footer__doc-link">Propuesta de colaboración y estudio de rentabilidad</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
